@@ -1,30 +1,36 @@
 {
-  "name": "appnima",
+  "name": "@elementary-ts/core",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "server-dev": "tsc --watch & nodemon dist/Server.js",
+    "build": "rm -rf dist && tsc",
     "lint": "eslint src --ext ts",
+    "watch": "tsc --watch",
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/jsonwebtoken": "^7.2.8",
     "ascii-art": "^1.4.3",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
     "microframework": "^0.6.4",
     "morgan": "^1.9.0",
+    "mssql": "^4.1.0",
     "multer": "^1.3.0",
     "password-hash": "^1.2.2",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "reflect-metadata": "^0.1.12",
-    "routing-controllers": "^0.7.7"
+    "routing-controllers": "^0.7.7",
+    "tedious": "^2.2.4",
+    "typeorm": "^0.2.7",
+    "typeorm-routing-controllers-extensions": "^0.2.0"
+
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
@@ -40,6 +46,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-promise": "^3.8.0",
+    "ts-node": "^7.0.0",
     "tsc": "^1.20150623.0",
     "typescript": "^2.9.1",
     "typescript-eslint-parser": "^16.0.0"

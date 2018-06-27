@@ -2,6 +2,7 @@ import "reflect-metadata"; // this shim is required
 import { bootstrapMicroframework } from "microframework";
 import { ServerLoader } from "./bootstrap/ServerLoader";
 import { Config } from './lib/Config';
+import { DbConnectionLoader } from "./bootstrap/DbConnectionLoader";
 
 bootstrapMicroframework({
     config: {
@@ -10,6 +11,8 @@ bootstrapMicroframework({
         bootstrapTimeout: 10
     },
     loaders: [
+
+        DbConnectionLoader,
         ServerLoader
     ]
 })

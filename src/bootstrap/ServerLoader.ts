@@ -2,8 +2,8 @@ import { MicroframeworkSettings } from "microframework";
 import { createExpressServer } from "routing-controllers";
 import * as morgan from 'morgan';
 
-import { UserController } from "../controllers/UserController";
 import { Config } from "../lib/Config";
+import { AuthorizationChecker } from "../lib/Authentication";
 
 
 export function ServerLoader(settings: MicroframeworkSettings) {
@@ -17,7 +17,8 @@ export function ServerLoader(settings: MicroframeworkSettings) {
     |
     */
     const app = createExpressServer({
-        controllers: [UserController] // we specify controllers we want to use
+        authorizationChecker: AuthorizationChecker,
+        controllers: [`${__dirname}/../controllers/*{.js,.ts}`] // we specify controllers we want to use
     });
 
     /*

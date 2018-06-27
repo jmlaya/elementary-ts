@@ -85,7 +85,8 @@ export default {
      * will not be safe. Please do this before deploying an application!
      *
      */
-
-    'key': process.env.APP_KEY,
-    'cipher': 'AES-256-CBC'
+    'secret':{
+        'key': process.env.APP_KEY,
+        'cipher': 'AES-256-CBC'
+    },
 }
